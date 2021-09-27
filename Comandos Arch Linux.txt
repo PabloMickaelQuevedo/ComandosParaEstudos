@@ -1,0 +1,15 @@
+Arch Linux
+
+Comandos:
+loadkeys (nome do teclado)= Comando para mudar entre os padrões de teclado, para o brasileiro segue > loadkeys br-abnt2.
+export LANG= Muda o idioma do ambiente live, para brasileiro segue > export LANG=pt_BR.UTF-8.
+ls /sys/firmware/efi/efivar= Descobre se o sistema foi iniciado no modo UEFI, por exemplo, se o comando der certo sem erro, é por que foi iniciado no modo UEFI, mas se o diretorio nao existir é por que pode ser iniciado no modo BIOS ou CSM
+iwctl= Conectar a uma rede WI-FI.
+ping -c (Número) (site desejado)= Faz um número x de testes de ping em determinado site, por exemplo ping -c 5 google.com, assim seriam 5 testes de ping no site da google.
+timedatectl status= Verifica o status do relógio e data do sistema.
+set-timezone= lista todos os fuso horários disponíveis.
+timedatectl set-timezone (Nome do fuso horário)= Define um fuso horário que escolheu.
+fdisk -l /deve/sda= lista dados dos discos do sitema.
+cfdisk= Modo de particionamento com texto interativo.
+
+
