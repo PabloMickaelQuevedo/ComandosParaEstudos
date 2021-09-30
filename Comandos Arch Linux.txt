@@ -1,5 +1,40 @@
 Arch Linux
 
+Particionamento:
+Ao usar o cfdisk para entrar no modo de particionamento, deve primeiro criar uma partição de pelo menos 500mb com o tipo BIOS legacy (ou de sua preferência) para o funcionamento correto do sitema.
+Dê um write no sd2 para preescrever. 
+Com as partições prontas, agora devemos formatar. use o comando mkfs.fat -F32 /dev/sda1 para formatar o disco de 500mb no topo BIOS legacy para FAT 32.
+Logo em seguida use o comando mkfs.ext4 /dev/sda2 para formatar o disco do sistema em formato ext4(padrão). 
+Depois devemos usar o comando mount /dev/sda2 /mnt para montar o disco.
+
+Instalação do Arch:
+Usamos o comando pacstrap /mnt base base-devel linux linux-firmware para instalar o arch.
+Apos instalar os pacotes, usamos o comando genfstab -U /mnt >> /mnt/etc/fstab para subir essa montagem para o sistema reconhecer apos ser reiniciado.
+Podemos dar o comando vim/ etc/locale.gen para escolher nossa localização, basta excluir o comentário da localização de preferência.
+Agora comando vim /etc/locale.conf para criar uma variável LANG. Digite export LANG="pt_BR.UTF-8", salve e saia.
+Use o comando locale-gen para gerar essa localização que acabou de criar.
+Agora vim /etc/hostname para criar o nome da máquina.
+Dê um vim /etc/localhost para editar o local host.   127.0.0.1  localhost.localdomain localhost : ::1 " " " " 127.0.0.1 Nome de usario.localdomain Nome de usario 
+Baixe o Grube
+Instale o Grube
+Use esse comando grub-mkconfig -o /boot/grub/grub.cfg para colocar o grub no boot da máquina.
+Agora use umount -R /mnt que para desmontar recursivamente tudo. 
+E podemos reiniciar a máquina retirando a ISO. 
+
+Pós reinicialização:
+Se a internet não funcionar, use systemctl start NetwoerkManager para ativala.
+Dê um systemctl enable gdm para ativalo e garantir que a interface gráfica irá funcionar.
+Baixe o xorg-server.
+Use pacman -S gdm para instalar recursos para o GNOME. Vamos usar o GNOME SHELL 
+Use pacman -S gnome gnome-terminal nautilus para instalar o gnome.
+Após o downlaod agora use systenctl enable NetworkManager para habilitar a internet no boot.
+
+
+
+
+
+
+
 Comandos:
 loadkeys (nome do teclado)= Comando para mudar entre os padrões de teclado, para o brasileiro segue > loadkeys br-abnt2.
 export LANG= Muda o idioma do ambiente live, para brasileiro segue > export LANG=pt_BR.UTF-8.
@@ -11,5 +46,26 @@ set-timezone= lista todos os fuso horários disponíveis.
 timedatectl set-timezone (Nome do fuso horário)= Define um fuso horário que escolheu.
 fdisk -l /deve/sda= lista dados dos discos do sitema.
 cfdisk= Modo de particionamento com texto interativo.
+mkfs= Comando para formatar os discos.
+mount= Comando para montar discos.
+lsblk= Mostra os discos montados.
+pacstrap= Baixar pacotes.
+genfstab= Diretório para subir montagem de discos. 
+arch-chroot /mnt/bin/bash= Comando para entrar no modo usuário dentro do sistema. 
+vim= entra no editor de testo vim.
+nano= entra no editor de testo nano.
+cat= localiza algo em uma pasta.
+locale-gen= gera uma localização.
+passwd= Gera uma senha.
+pacman -S= Comando para instalar programas. 
+Nome do programa-install= instala um programa baixado, importante que deve escolher o local, como exemplo o dev/sda.
+useradd -m "Nome"= Cria um nome de usuário.
+echo= Comando para fazer as coisas mais diretas, sem precisar entrar em um editor de texto por exemplo, já botando algo direto para uma pasta.
+shutdown -h now= Desliga a máquina na hora.
+
+
+
+
+
 
 
