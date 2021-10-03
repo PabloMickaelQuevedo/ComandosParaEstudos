@@ -9,6 +9,23 @@ Remote= É quando faz uma ponte entre o Git e o GitHub (ou outro site de hosped�
 Push= Manda as alterações do código para o GitHub.
 Pull= Faz ao contrário, puxa essas alterações para a máquina. 
 
+Push do GIT no terminal: 
+
+Para usar o push do Git no terminal do linux, devemos cadastrar uma chave SSH.
+Primeiro devemos entrar no nosso GitHub, entrar em configurações, SSH and GPG keys e criar uma chave SSH.
+Agora devemos ir no terminal e criar uma chave SSH na máquina. Para isso usamos os comandos abaixo.
+ssh-keygen = Vai gerar a chave SSH (detalhe, vai gerar a chave no local que estiver o terminal), agora colocamos um nome para essa chave e (opcional)uma senha.
+Vão ser gerados 2 arquivos com o nome que foi escolhido, um deles vai ser .pub, esse .pub vamos usar para colocar na nossa SSH que criamos no GitHub.
+cat nome-do-arquivo.pub = vai aparecer os caracteres da chave, então copia e cola onde pede a chave la no GitHub.
+eval 'ssh-agent' = Para colocar dentro as chaves
+ssh-add nome-do-arquivo = Adiciona a chave privada no caso sem o .pub.
+Podemos criar a chave la no GitHub e seguir adiante.
+Agora é importante pegar o link do SSH no GitHub ao dar o remote, e não o HTML.
+Fica assim >> git remote add origin "link do SSH not GitHub sem aspas".
+Pronto!!! agora podemos dar um push. 
+
+
+
 ##
 
 Alguns Comandos
@@ -29,6 +46,7 @@ git checkout -b "Nome da Branch"= Sai da Branch atual, cria e entra em uma nova 
 git clone= clona um código para sua máquina.
 git commit --amend= Edita a mensagem do commit.
 git log= Mostra as versões(Commits) do código.
+git reflog= Mostra as Hash dos commits para poder navegar pelas versões.
 git reset --hard (hash do commit)= Volta para o Commit desejado.
 
 
