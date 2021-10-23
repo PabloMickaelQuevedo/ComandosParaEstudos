@@ -1,0 +1,67 @@
+Sempre começa com um <!DOCTYPE html>
+
+
+Para usar a linguagem HTML sempre devemos abrir e fechar a tag html, segue o exemplo:
+<html>
+
+</html>
+
+Para quebrar a linha, ou seja começar um novo paragrafo usamos a tag br(break roll), segue o exemplo:
+Aqui temos uma linha <br>
+Aqui uma nova linha <br>
+Se não colocar o <br> ao final da frase, o compilador não vai intender que se trata de uma nova linha.
+
+Para fazer um cabeçalho usa a tag <head> </head> 
+
+Para fazer um titulo para a aba do navegador usamos a tag <title> </title> | Importante usar o comando <meta charset="UTF-8"> Para não dar problema de acento e caracteres
+
+O conteúdo do site usamos dentro da tag <body> </body>
+
+Usamos a tag &(alguma coisa) para adicionar um caracter
+
+&nbsp; Código para dar um espaço maior entre uma palavra e outra
+
+<hr>(horizont roll) Coloca uma linha horizontal na página 
+
+<p> </p> Cria um parágrafo, ou seja deixa dois espaçamentos no navegador
+
+<pre> </pre> Personaliza o texto com os espaçamentos que usou no editor de texto
+
+<b> </b> Texto em Negrito
+
+<strong> </strong> Texto mais forte (Negrito), mas que deixa a frase com mais destaque que o bold
+
+<(comando) style= "color: cor" : bota a cor de texto dentro de uma função
+
+<!-- Comentário -->
+
+<u> </u> Faz um sublinhado
+
+<code></code> Define um código fonte
+
+<s></s> Diz que o texto é errado
+
+<del></del> Deleta um texto
+
+<i></i> Texto Itálico 
+
+<em></em> Dá uma ênfase a algum texto mas em Itálico
+
+<mark></mark> Marca texto para destaque (Amarelo)
+
+<sub> Textos subescritos como um ²³
+
+<img src="Local do arquivo"> Coloca um imagem na Página
+
+<a href=link> Palavra com o link </a>  Adiciona um link na página
+
+
+
+
+
+
+
+
+
+
+
